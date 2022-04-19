@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="1835" pageHeight="500" orientation="Landscape" columnWidth="1795" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05e2f468-a5f3-4356-a96b-801c7943e441">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tb_sparepartkeluar.`id_brgklr` AS tb_sparepartkeluar_id_brgklr,
+     tb_sparepartkeluar.`kd_sparepart` AS tb_sparepartkeluar_kd_sparepart,
+     tb_sparepartkeluar.`nm_sparepartklr` AS tb_sparepartkeluar_nm_sparepartklr,
+     tb_sparepartkeluar.`hargasparepartklr` AS tb_sparepartkeluar_hargasparepartklr,
+     tb_sparepartkeluar.`tambahpesanan` AS tb_sparepartkeluar_tambahpesanan,
+     tb_sparepartkeluar.`harga` AS tb_sparepartkeluar_harga,
+     tb_sparepartkeluar.`bayar` AS tb_sparepartkeluar_bayar,
+     tb_sparepartkeluar.`kembalian` AS tb_sparepartkeluar_kembalian,
+     tb_sparepartkeluar.`tgl` AS tb_sparepartkeluar_tgl
+FROM
+     `tb_sparepartkeluar` tb_sparepartkeluar]]>
+	</queryString>
+	<field name="tb_sparepartkeluar_id_brgklr" class="java.lang.String"/>
+	<field name="tb_sparepartkeluar_kd_sparepart" class="java.lang.String"/>
+	<field name="tb_sparepartkeluar_nm_sparepartklr" class="java.lang.String"/>
+	<field name="tb_sparepartkeluar_hargasparepartklr" class="java.lang.String"/>
+	<field name="tb_sparepartkeluar_tambahpesanan" class="java.lang.String"/>
+	<field name="tb_sparepartkeluar_harga" class="java.lang.String"/>
+	<field name="tb_sparepartkeluar_bayar" class="java.lang.String"/>
+	<field name="tb_sparepartkeluar_kembalian" class="java.lang.String"/>
+	<field name="tb_sparepartkeluar_tgl" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="143" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="1" y="110" width="1794" height="32" forecolor="#000000" backcolor="#4308E7" uuid="cd461223-076e-4b83-b202-66660fd055d8"/>
+			</frame>
+			<staticText>
+				<reportElement x="747" y="68" width="383" height="42" uuid="10179296-3aeb-4283-b26f-afe7dd1a2e8f"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Jl.H.Nimin no 122 Depok.Jawa Barat (Whatsapp : 089-045-249)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="770" y="36" width="339" height="32" forecolor="#330099" uuid="3c2f3f07-13e3-4dd8-801b-d4a083b69b72"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="24" isBold="true" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Laporan Penjualan Sparepart]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="632" y="4" width="639" height="32" forecolor="#FF0033" uuid="fe7635be-e1b0-4342-af6d-c4d93b197c9f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Wide Latin" size="24" isBold="true" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Penjualan Sparepart S2M Speed]]></text>
+			</staticText>
+			<image>
+				<reportElement x="291" y="-13" width="159" height="123" uuid="8689bdf9-6d0c-4dc5-be0a-4462fb58ac31"/>
+				<imageExpression><![CDATA["D:\\new jual\\jualsparepart\\src\\Images\\logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="1" y="0" width="199" height="18" forecolor="#000000" uuid="d714346d-a504-413a-a671-330af421435e"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Sparepart Keluar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="200" y="0" width="199" height="18" forecolor="#000000" uuid="50a4929c-30f6-4916-b344-cea2621dcdc5"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Sparepart Keluar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="399" y="0" width="199" height="18" forecolor="#000000" uuid="71060eb9-ff60-4e8e-978e-d31858bbfbb0"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Sparepart Keluar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="598" y="0" width="199" height="18" forecolor="#000000" uuid="d60e9fa6-b9cc-49f7-8012-c17f3f706a2a"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Harga Sparepart Keluar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="797" y="0" width="199" height="18" forecolor="#000000" uuid="d60e9fa6-b9cc-49f7-8012-c17f3f706a2a"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tambah Pesanan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="996" y="0" width="199" height="18" forecolor="#000000" uuid="d60e9fa6-b9cc-49f7-8012-c17f3f706a2a"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Harga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="1195" y="0" width="199" height="18" forecolor="#000000" uuid="d60e9fa6-b9cc-49f7-8012-c17f3f706a2a"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bayar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="1394" y="0" width="199" height="18" forecolor="#000000" uuid="d60e9fa6-b9cc-49f7-8012-c17f3f706a2a"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kembalian]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="1593" y="0" width="199" height="18" forecolor="#000000" uuid="d60e9fa6-b9cc-49f7-8012-c17f3f706a2a"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="1" y="0" width="1794" height="18" uuid="560c51ed-5b4d-4863-ab62-7c4d261122d7"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="398" y="0" width="199" height="18" uuid="1dbc8f83-e56a-49ae-8b2d-81163cee654c"/>
+					<textElement textAlignment="Center">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tb_sparepartkeluar_nm_sparepartklr}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="199" y="0" width="199" height="18" uuid="5b365acf-a4ef-4029-8c6d-62649e24680a"/>
+					<textElement textAlignment="Center">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tb_sparepartkeluar_kd_sparepart}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="597" y="0" width="199" height="18" uuid="2241f1f8-ef77-4122-a081-583537a87cce"/>
+					<textElement textAlignment="Center">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tb_sparepartkeluar_hargasparepartklr}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="795" y="0" width="199" height="18" uuid="56489a99-0e7e-4d31-9b00-b95e7d4b86ac"/>
+					<textElement textAlignment="Center">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tb_sparepartkeluar_hargasparepartklr}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="996" y="0" width="199" height="18" uuid="77ab3097-c2c2-49cd-814f-b6d3cebc3f87"/>
+					<textElement textAlignment="Center">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tb_sparepartkeluar_harga}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="199" height="18" uuid="77ab3097-c2c2-49cd-814f-b6d3cebc3f87"/>
+					<textElement textAlignment="Center">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tb_sparepartkeluar_id_brgklr}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="1592" y="0" width="199" height="18" uuid="77ab3097-c2c2-49cd-814f-b6d3cebc3f87"/>
+					<textElement textAlignment="Center">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tb_sparepartkeluar_tgl}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="1196" y="0" width="199" height="18" uuid="77ab3097-c2c2-49cd-814f-b6d3cebc3f87"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_sparepartkeluar_bayar}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="1395" y="0" width="199" height="18" uuid="77ab3097-c2c2-49cd-814f-b6d3cebc3f87"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_sparepartkeluar_kembalian}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="133" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="03d7840e-06e7-4620-a6a5-c021948638a4"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="1600" y="104" width="157" height="20" uuid="f230855d-f109-4aec-a3f2-332936df015a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[(Bayu Sugara)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1610" y="26" width="129" height="20" uuid="9b6d46e3-ffa5-4667-a24f-559efdb37745"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Kepala Bengkel]]></text>
+			</staticText>
+			<textField pattern="EEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="1653" y="6" width="122" height="20" forecolor="#000000" uuid="582b1d2a-2369-4fcd-a369-f9418e9c9cac"/>
+				<textElement verticalAlignment="Top">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1607" y="6" width="46" height="20" uuid="f4619005-f01e-4dcb-82a7-6fe72e944a71"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Depok,]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="1795" height="25" forecolor="#D0B48E" backcolor="#B90000" uuid="1ad3fd79-9c63-42c0-a11f-6c5fd6ed02a7"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="1749" y="3" width="40" height="20" forecolor="#FFFFFF" uuid="f0c46530-88da-42c3-980e-d3f56a3035b3"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="1669" y="3" width="80" height="20" forecolor="#FFFFFF" uuid="3722f1ea-08a5-4d54-a734-dc6d5990efd2"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Halaman Ke "+$V{PAGE_NUMBER}+" Dari"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
